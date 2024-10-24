@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+    </header>
+    <main>
+        <form method="POST" action="/register">
+            {{ form.hidden_tag() }}
+            <div>
+                <label for="username">Username:</label>
+                {{ form.username(size=32) }}
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                {{ form.password(size=32) }}
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Quiz App</p>
+    </footer>
+</body>
+</html>
+
