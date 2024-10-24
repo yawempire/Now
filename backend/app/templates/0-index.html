@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiz App Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Welcome to the Quiz App!</h1>
+    <p class="lead">Test your knowledge with our fun quizzes. Are you ready?</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">General Knowledge</h5>
+                    <p class="card-text">Challenge your general knowledge with a variety of questions!</p>
+                    <a href="{{ url_for('main.start_quiz', category='general') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Science</h5>
+                    <p class="card-text">Test your understanding of scientific principles and facts!</p>
+                    <a href="{{ url_for('main.start_quiz', category='science') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">History</h5>
+                    <p class="card-text">Explore historical events and figures with our quiz!</p>
+                    <a href="{{ url_for('main.start_quiz', category='history') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{{ url_for('main.register') }}" class="btn btn-success">Register</a>
+        <a href="{{ url_for('main.login') }}" class="btn btn-secondary">Login</a>
+    </div>
+</div>
+{% endblock %}
