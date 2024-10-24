@@ -1,0 +1,52 @@
+<!-- Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Quizzle</title>
+</head>
+<body>
+
+    <div id="home">
+        <h1>Welcome to Quizzle</h1>
+        <a href="{{ url_for('main.login') }}">Login</a>
+        <a href="{{ url_for('main.register') }}">Register</a>
+        <a href="{{ url_for('main.start_quiz', category='general') }}">Start Quiz</a>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="register" style="display: none;">
+        <h1>Register</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username.label }} {{ form.username() }}<br>
+            {{ form.password.label }} {{ form.password() }}<br>
+            <input type="submit" value="Register">
+        </form>
+        <p><a href="{{ url_for('main.login') }}">Already have an account? Login here.</a></p>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" style="display: none;">
+        <h1>Login</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username.label }} {{ form.username() }}<br>
+            {{ form.password.label }} {{ form.password() }}<br>
+            <input type="submit" value="Login">
+        </form>
+        <p><a href="{{ url_for('main.register') }}">Don't have an account? Register here.</a></p>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quiz-container" style="display: none;">
+        <h1>Quiz</h1>
+        <div id="question-container"></div>
+        <button id="next-question" style="display: none;">Next Question</button>
+    </div>
+
+</body>
+</html>
+
